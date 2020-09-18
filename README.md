@@ -53,4 +53,135 @@ Utilizando o JUnit 4, podemos refatorar de seguinte forma:
 
 #### 05. Suponha que um programador escreveu o teste a seguir para aclasse ArrayList de Java. Como você irá perceber, no código são usados diversos System.out.println. Ou seja, no fundo, ele é um teste manual, pois o desenvolvedor tem que conferir o seu resultado manualmente. Reescreva então cada um dos testes (de 1 a 6) como um teste de unidade, usando a sintaxe e os comandos do JUnit.
 
+```java
+import java.util.List;
+import java.util.ArrayList;
+public class Main{
+    public static void main(String[] args) {
+        // teste 1
+        List<Integer> s = new ArrayList<Integer>();
+        System.out.println(s.isEmpty());
+    
+        // teste 2
+        s = new ArrayList<Integer>();
+        s.add(1);
+        System.out.println(s.isEmpty());
+    
+        // teste 3
+        s = new ArrayList<Integer>();
+        s.add(1);
+        s.add(2);
+        s.add(3);
+        System.out.println(s.size());
+        System.out.println(s.get(0));
+        System.out.println(s.get(1));
+        System.out.println(s.get(2));
+    
+        // teste 4
+        s = new ArrayList<Integer>();
+        s.add(1);
+        s.add(2);
+        s.add(3);
+        int elem = s.remove(2);
+        System.out.println(elem);
+        System.out.println(s.get(0));
+        System.out.println(s.get(1));
+    
+        // teste 5
+        s = new ArrayList<Integer>();
+        s.add(1);
+        s.remove(0);
+        System.out.println(s.size());
+        System.out.println(s.isEmpty());
+        
+        // teste 6
+        try {
+            s = new ArrayList<Integer>();
+            s.add(1);
+            s.add(2);
+            s.remove(2);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("IndexOutOfBound");
+        }
+    }
+}
+```
+
 Resolução no arquivo `ArrayListTest.java`.
+
+#### 06. Seja a seguinte função. Observe que ela possui quatro comandos, sendo dois deles if. Logo, esses dois ifs geram quatro branches:
+
+```java
+void f(int x, int y) {
+    if (x > 0) {
+        x = 2 * x;
+        if (y > 0) {
+            y = 2 * y;
+        }
+    }
+}
+```
+
+| Chamada feita pelo teste | Cobertura de comandos | cobertura de branches |
+|--------------------------|-----------------------|-----------------------|
+| f(0, 0)                  | 1                     | 1                     |
+| f(1, 1)                  | 4                     | 2                     |
+| f(0, 0) e f(1, 1)        | 4                     | 3                     |
+
+#### 07. Suponha o seguinte requisito: alunos recebem conceito A em uma disciplina se tiverem nota maior ou igual a 90. Seja então a seguinte função que implementa esse requisito:
+
+```java
+boolean isConceitoA(int nota) {
+    if (nota > 90)
+        return true;
+    else return false;
+}
+```
+
+##### O código dessa função possui três comandos, sendo um deles um if; logo, ela possui dois branches. 
+
+##### Responda agora às seguintes perguntas.
+
+##### a. A implementação dessa função possui um bug? Se sim, quando esse bug resulta em falha?
+Sim. Quando a entrada for 90 o requisito original não será contemplado.
+
+##### b. Suponha que essa função — exatamente como ela está implementada — seja testada com duas notas: 85 e 95. Qual a cobertura de comandos desse teste? E a cobertura de branches?
+   - Para a entrada 85:
+      - Cobertura de comandos: 2
+      - Cobertura de branches: 1
+      
+   - Para a entrada 90:
+      - Cobertura de comandos: 2
+      - Cobertura de branches: 1  
+
+Cobertura total de comandos: 3
+Cobertura total de branches: 2
+
+##### c.Seja a seguinte afirmação: se um programa possui 100% de cobertura de testes, em nível de comandos, ele está livre de bugs. Ela é verdadeira ou falsa? Justifique.
+Falsa. A cobertura de testes considera as linhas de código que foram executadas, porém, caso tenhamos estruturas condicionais e não testarmos todas as combinações possíveis, os testes não conseguirão prevenir 100% o sistema de BUGs.
+Em outras palavras, deveríamos testar todas as possíveis branches do código para que o sistema seja mais resiliente à BUGs.
+
+#### 08 Complete os comandos assert nos trechos indicados.
+
+```java
+public void test1() {
+    LinkedList list = mock(LinkedList.class);
+    when(list.size()).thenReturn(10);
+    assertEquals(10, list.size());
+}
+```
+
+```java
+public void test2() {
+    LinkedList list = mock(LinkedList.class);
+    when(list.get(0)).thenReturn("Engenharia");
+    when(list.get(1)).thenReturn("Software");
+    String result = list.get(0) + " " + list.get(1);
+    assertEquals("Engenharia Software", result);
+}
+```
+
+#### 09. Suponha duas unidades de código A e B, sendo que A depende de B. Para permitir o teste de unidade de A foi criado um mock para B, chamado B'. O teste de unidade de A está passando. Porém, ao fazer o teste de integração com A e B, ele falha. Descreva um cenário mais real, no qual A, B, e B' sejam classes reais, com métodos reais, que realizam funções reais, etc. O cenário proposto deve incluir um bug associado ao mock B'. Ou seja, B' esconde um bug, que só vai aparecer no teste de integração. Dizendo de outra maneira, B' não simula precisamente o comportamento de B; quando B' é removido, no teste de integração, surge então um bug.
+O cenário que criei, define a classe `BookService` como `A`, a classe `DB` como `B` e a classe `MockedDB` como `B'`. Os testes criados demonstrando que a integração real não funciona, está na classe `BookServiceTest`.
+
+

@@ -16,7 +16,7 @@ Os testes de unidade possuem diversos benefícios, dentre eles estão:
 
 #### 03. Suponha uma função `fib(n)`, que retorna o n-ésimo termo da sequência de Fibonacci, isto é, `fib(0)=0, fib(1)=1, fib(2)=1, fib(3)=2, fib(4)=3`, etc. Escreva um código em Java de teste de unidade para essa função.
 
-Os testes escritos para essa questão está no arquivo `FibonacciTest.java`.
+Os testes escritos para essa questão está no arquivo [FibonacciTest](https://github.com/leonardoamurca/lista_exercicios_02/blob/master/src/test/java/com/leonardoamurca/lista_exercicios_02/FibonacciTest.java).
 
 #### 04. Reescreva o seguinte teste, que verifica o levantamento de uma exceção EmptyStackException, para que ele fique mais simples e fácil de entender.
 

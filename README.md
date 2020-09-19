@@ -185,3 +185,18 @@ public void test2() {
 O cenário que criei, define a classe [BookService](https://github.com/leonardoamurca/lista_exercicios_02/blob/master/src/main/java/com/leonardoamurca/lista_exercicios_02/BookService.java) como `A`, a classe [DB](https://github.com/leonardoamurca/lista_exercicios_02/blob/master/src/main/java/com/leonardoamurca/lista_exercicios_02/DB.java) como `B` e a classe [MockedDB](https://github.com/leonardoamurca/lista_exercicios_02/blob/master/src/main/java/com/leonardoamurca/lista_exercicios_02/MockedDB.java) como `B'`. Os testes criados demonstrando que a integração real não funciona, está na classe [BookServiceTest](https://github.com/leonardoamurca/lista_exercicios_02/blob/master/src/test/java/com/leonardoamurca/lista_exercicios_02/BookServiceTest.java).
 
 
+## Rodando o projeto em sua máquina
+
+Esse projeto utiliza o gradle como gerenciador de dependências, portanto, garanta que sua IDE tenha suporte para projetos que utilizam o gradle. Neste guia, mostrarei como rodar o projeto na IDE Eclipse.
+
+### Passos para rodar o projeto no Eclipse IDE
+
+- 1: Importe esse projeto para sua máquina utilizando o comando: `git clone https://github.com/leonardoamurca/lista_exercicios_02.git`.
+- 2: Abra sua IDE, clique em File > Import.
+- 3: Abrirá uma janela, em seguida, selecione Gradle > Existing Gradle Project.
+- 4: Prossiga até chegar na tela para selecionar o diretório com o projeto.
+- 5: Selecione o caminho para o diretório que você clonou no passo 1 e clique em Finish.
+
+E pronto, o Eclipse irá importar as dependências do projeto e você agora poderá executaer as classes normalmente. :)
+
+

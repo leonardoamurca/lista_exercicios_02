@@ -107,7 +107,7 @@ public class Main{
 }
 ```
 
-Resolução no arquivo `ArrayListTest.java`.
+Resolução no arquivo [ArrayListTest](https://github.com/leonardoamurca/lista_exercicios_02/blob/master/src/test/java/com/leonardoamurca/lista_exercicios_02/ArrayListTest.java).
 
 #### 06. Seja a seguinte função. Observe que ela possui quatro comandos, sendo dois deles if. Logo, esses dois ifs geram quatro branches:
 
@@ -182,6 +182,6 @@ public void test2() {
 ```
 
 #### 09. Suponha duas unidades de código A e B, sendo que A depende de B. Para permitir o teste de unidade de A foi criado um mock para B, chamado B'. O teste de unidade de A está passando. Porém, ao fazer o teste de integração com A e B, ele falha. Descreva um cenário mais real, no qual A, B, e B' sejam classes reais, com métodos reais, que realizam funções reais, etc. O cenário proposto deve incluir um bug associado ao mock B'. Ou seja, B' esconde um bug, que só vai aparecer no teste de integração. Dizendo de outra maneira, B' não simula precisamente o comportamento de B; quando B' é removido, no teste de integração, surge então um bug.
-O cenário que criei, define a classe `BookService` como `A`, a classe `DB` como `B` e a classe `MockedDB` como `B'`. Os testes criados demonstrando que a integração real não funciona, está na classe `BookServiceTest`.
+O cenário que criei, define a classe [BookService](https://github.com/leonardoamurca/lista_exercicios_02/blob/master/src/main/java/com/leonardoamurca/lista_exercicios_02/BookService.java) como `A`, a classe [DB](https://github.com/leonardoamurca/lista_exercicios_02/blob/master/src/main/java/com/leonardoamurca/lista_exercicios_02/DB.java) como `B` e a classe [MockedDB](https://github.com/leonardoamurca/lista_exercicios_02/blob/master/src/main/java/com/leonardoamurca/lista_exercicios_02/MockedDB.java) como `B'`. Os testes criados demonstrando que a integração real não funciona, está na classe [BookServiceTest](https://github.com/leonardoamurca/lista_exercicios_02/blob/master/src/test/java/com/leonardoamurca/lista_exercicios_02/BookServiceTest.java.
 
 

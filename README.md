@@ -5,7 +5,8 @@
 a. unidade \
 b. aceitação \
 c. sistema e aceitação\
-**d. unidade e integração**
+d. integração e sistema
+**e. unidade e integração**
     
 #### 02. Descreva três benefícios associados ao uso de testes de unidade.
 
